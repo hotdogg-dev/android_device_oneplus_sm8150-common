@@ -448,6 +448,13 @@
     <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
 
-     <!-- Smart charging -->
+    <!-- Smart charging -->
     <bool name="config_smartChargingAvailable">true</bool>
+
+    <!-- Does the battery LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">false</bool>
+
+    <!-- Whether device has notification LED -->
+    <bool name="config_hasNotificationLed">false</bool>    
 </resources>
