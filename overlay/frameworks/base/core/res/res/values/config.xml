@@ -456,5 +456,8 @@
     <bool name="config_multiColorBatteryLed">false</bool>
 
     <!-- Whether device has notification LED -->
-    <bool name="config_hasNotificationLed">false</bool>    
+    <bool name="config_hasNotificationLed">false</bool>  
+
+    <!-- NightLight FOD -->
+    <bool name="disable_fod_night_light">true</bool>  
 </resources>
