@@ -459,5 +459,8 @@
     <bool name="config_hasNotificationLed">false</bool>  
 
     <!-- NightLight FOD -->
-    <bool name="disable_fod_night_light">true</bool>  
+    <bool name="disable_fod_night_light">true</bool>
+
+    <!-- Whether to disable assist hint on lockscreen -->
+    <bool name="config_disableAssistHintOnLockscreen">true</bool>
 </resources>
