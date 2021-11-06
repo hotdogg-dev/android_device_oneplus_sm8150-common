@@ -43,15 +43,24 @@ void updateScreenBuffer() {
 
     if (now.tv_sec - lastScreenUpdate >= SCREENSHOT_INTERVAL) {
         // Update Screenshot at most every second
-        ScreenshotClient::capture(
-                SurfaceComposerClient::getInternalDisplayToken(),
-                android::ui::Dataspace::DISPLAY_P3_LINEAR, android::ui::PixelFormat::RGBA_8888,
-                Rect(ALS_POS_X - ALS_RADIUS, ALS_POS_Y - ALS_RADIUS, ALS_POS_X + ALS_RADIUS,
-                     ALS_POS_Y + ALS_RADIUS),
-                ALS_RADIUS * 2, ALS_RADIUS * 2, true, android::ui::ROTATION_0, &outBuffer);
+        android::DisplayCaptureArgs captureArgs;
+        captureArgs.displayToken = SurfaceComposerClient::getInternalDisplayToken();
+        captureArgs.pixelFormat = android::ui::PixelFormat::RGBA_8888;
+        captureArgs.sourceCrop = Rect(ALS_POS_X - ALS_RADIUS, ALS_POS_Y - ALS_RADIUS, ALS_POS_X + ALS_RADIUS, ALS_POS_Y + ALS_RADIUS);
+        captureArgs.width = ALS_RADIUS * 2;
+        captureArgs.height = ALS_RADIUS * 2;
+        captureArgs.useIdentityTransform = true;
+        android::status_t ret = ScreenshotClient::captureDisplay(
+                captureArgs, captureListener);
+        if(ret != android::NO_ERROR) {
+            return;
+        }
+	    android::binder::Status s = captureListener->onScreenCaptureCompleted(captureResults);
+        if(s.isOk()){
+		    outBuffer = captureResults.buffer;
+	    }
         lastScreenUpdate = now.tv_sec;
     }
-
     uint8_t *out;
     auto resultWidth = outBuffer->getWidth();
     auto resultHeight = outBuffer->getHeight();
