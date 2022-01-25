@@ -345,10 +345,10 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # OnePlus
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     oneplus-fwk
 
-PRODUCT_BOOT_JARS += \
+#PRODUCT_BOOT_JARS += \
     oneplus-fwk
 
 # Power
@@ -477,7 +477,7 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac_vendor
 
-PRODUCT_BOOT_JARS += \
+#PRODUCT_BOOT_JARS += \
     WfdCommon
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
