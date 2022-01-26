@@ -1,3 +1,6 @@
+type als_correction_service, domain;
+type als_correction_service_exec, system_file_type, exec_type, file_type;
+
 # Allow access to the HALs
 hal_client_domain(hal_sensors_default, hal_audio)
 
