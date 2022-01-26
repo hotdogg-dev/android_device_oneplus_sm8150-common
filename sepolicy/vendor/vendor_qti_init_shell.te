@@ -1,4 +1,5 @@
 # Allow vendor_qti_init_shell to write to sysfs_fsc
+allow vendor_qti_init_shell sysfs:file w_file_perms;
 allow vendor_qti_init_shell sysfs_fsc:file w_file_perms;
 
 # Allow vendor_qti_init_shell to write to vendor_sysfs_scsi_host
