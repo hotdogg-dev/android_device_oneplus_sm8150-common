@@ -10,9 +10,6 @@ vendor.bluetooth.soc=cherokee
 # Blur
 persist.sys.sf.disable_blurs=1
 
-# Charger
-ro.charger.enable_suspend=true
-
 # CNE
 persist.vendor.cne.feature=1
 

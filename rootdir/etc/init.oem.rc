@@ -21,7 +21,7 @@ service load_wlan_driver /vendor/bin/sh /vendor/bin/load_wlan_driver
     disabled
     oneshot
 
-on charger
+on property:init.svc.vendor.charger=running
     setprop persist.vendor.oem.dump 0
     setprop persist.vendor.oem.ssrdump 0
     start oemlogkit
