@@ -200,5 +200,8 @@ persist.vendor.radio.uicc_se_enabled=false
 vendor.usb.diag.func.name=diag
 vendor.usb.use_ffs_mtp=0
 
+# Verity
+ro.apk_verity.mode=2
+
 # Zygote
 zygote.critical_window.minute=10
