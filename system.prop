@@ -7,9 +7,6 @@ ro.audio.monitorRotation=true
 bt.max.hfpclient.connections=1
 vendor.bluetooth.soc=cherokee
 
-# Blur
-persist.sys.sf.disable_blurs=1
-
 # CNE
 persist.vendor.cne.feature=1
 
